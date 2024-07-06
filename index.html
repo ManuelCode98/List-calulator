@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- fonts awesome -->
+     <link rel="stylesheet" type="text/css" href="assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css"/>
+
+    <title>List Calculator</title>
+  </head>
+  <body>
+
+    <div class="layout">
+
+      <header class="app__header"> 
+        <h1 class="header__title">Estos son tus productos</h1>
+      </header>
+
+      <div class="app">
+  
+        <div class="app__container">
+
+          <div class="container__labels">
+            <label for="product" class="labels__product">Producto</label>
+            <label for="price" class="labels__price">Precio C/U</label>
+            <label for="amount" class="labels__amount">Cant</label>
+            <label for="total-price" class="labels__total-price">Valor total</label>
+          </div>
+          
+          
+          <form class="container__form">
+            <input type="text" id="product" class="inputs__product" placeholder="Ingresa el producto"/>
+            <input type="number" id="price" class="inputs__price" placeholder="$9999" />
+            <input type="number" id="amount" class="inputs__amount" value="1" />
+            <button class="inputs__add">Agregar</button>
+          </form>
+  
+          <div class="container__info">
+            
+          </div>
+  
+          <div class="container__info_result">
+            <span class="info_result__title">Valor a pagar</span>
+            <span class="info_result__total">0</span>
+          </div>
+  
+        </div>
+  
+        <div class="app__btns">
+  
+            <button class="btns__btn-delete--1">Borrar completados</button>
+            <button class="btns__btn-delete--2">Borrar todos!</button>
+  
+        </div>
+  
+      </div>
+
+    </div>
+
+    
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
