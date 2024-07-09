@@ -1,3 +1,4 @@
+import { addX } from "./add-x-o-check";
 import { containerInfo } from "./create-product";
 import { loadClickIndexFound } from "./event-click";
 
@@ -62,6 +63,7 @@ export const saveClassLineThrough = ()=>{
         const selectAncestroContainer = selectIdProduct.closest('div');
     
               selectAncestroContainer.classList.add('line-through');
+              addX(selectIdProduct);
 
               
               

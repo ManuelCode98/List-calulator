@@ -7,7 +7,7 @@ export const addX = ( selectDivProducts )=>{
     const selectAncestroIcon = selectAncestroText.querySelector('i');
 
 
-    //Le borrar las clase de check y le pone la de la X
+    //Le borrar las clase de check
     selectAncestroIcon.classList.remove('span-product__icon--green');
     selectAncestroIcon.classList.remove('fa-solid');
     selectAncestroIcon.classList.remove('fa-check');

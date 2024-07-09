@@ -31,7 +31,7 @@ export const loadProductDom = async()=>{
         
             containerInfo.innerHTML += `
                 <div class='info__span-product'>
-                <i class="span-product__icon fa-solid fa-check"></i>
+                <i class="span-product__icon--green fa-solid fa-check"></i>
                 <span id='${getIds[i]}' class='info__product'>${ getProduct[i][0] }</span> 
                 <span class='info__price'>${ getProduct[i][1][0] }</span>
                 <span class='info__amount'>${ getProduct[i][2] }</span>
@@ -72,7 +72,7 @@ export const createProductDom = ()=>{
         
             containerInfo.innerHTML += `
                 <div class='info__span-product'>
-                <i class="span-product__icon fa-solid fa-check"></i>
+                <i class="span-product__icon--green fa-solid fa-check"></i>
                 <span id='${getIds[i]}' class='info__product'>${ getProduct[i][0] }</span> 
                 <span class='info__price'>${ getProduct[i][1][0] }</span>
                 <span class='info__amount'>${ getProduct[i][2] }</span>

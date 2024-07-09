@@ -93,7 +93,6 @@ body {
   
 }
 
-
 .container__form {
   display: flex;
   flex-direction: row;
@@ -102,7 +101,6 @@ body {
   gap: 2rem;
 
 }
-
 
 .inputs__product {
   display: flex;
@@ -152,18 +150,10 @@ body {
   cursor: pointer;
 }
 
-/* .inputs__add:hover{
-  color: rgb(34, 233, 34); */
-  /* text-shadow: -2px 2px 2px black, -2px 2px 2px black, -2px 2px 2px black;
-  box-shadow: 0px 2px 2px black, 0px 2px 2px black, 0px 2px 2px black;
-  transform: scale(1.1); */
-/* } */
-
 .inputs__add:active{
   color: rgb(34, 233, 34);
   transform: scale(1.1);
 }
-
 
 .container__info {
   display: flex;
@@ -177,7 +167,6 @@ body {
 .info__span-product {
   display: flex;
   width: 100%;
-  /* max-width: 100%; */
   padding: 0.3rem;
   justify-content: start;
   transition: 500ms;
@@ -189,8 +178,20 @@ body {
   text-decoration: line-through;
 }
 
-.span-product__icon {
-  /* color: green; */
+
+/* Hacer que al estar el item tachado cambie i icon de check de color a  */
+/* .span-product__icon {
+  color: green;
+  margin-right: 1rem;
+} */
+
+.span-product__icon--red {
+  color: red;
+  margin-right: 1rem;
+}
+
+.span-product__icon--green {
+  color: green;
   margin-right: 1rem;
 }
 
@@ -371,9 +372,8 @@ body {
   .inputs__product {
     background: transparent;
     width: 50%;
-    /* color: green; */
     font-size: 1.6rem;
-    /* margin-left: 1rem; */
+    margin-left: 1rem;
   }
   .inputs__price {
     width: 22%;
@@ -394,10 +394,6 @@ body {
     margin-right: 0.5rem;
     margin-left: 0;
   }
-
-  /* .inputs__add:hover {
-    
-  } */
 
   .info__product {
     width: 40%;
@@ -436,11 +432,8 @@ body {
 
  
   .info_result__total {
-    /* display: flex; */
     width: 30%;
-    /* padding: 0; */
   }
-
  
 }
 
@@ -458,29 +451,21 @@ body {
   }
 
   .labels__product {
-    /* display: flex; */
     flex-basis: 44%;
-    /* margin-left: 0.3rem; */
-  
   }
   
   .labels__price {
-    /* display: flex; */
     flex-basis: 18%;
-    /* justify-content: center; */
-    
     text-align: center;
-
   }
+
   .labels__amount {
-    /* display: flex; */
     flex-basis: 15%;
     margin-left: 0.5rem;
  
   }
 
   .labels__total-price {
-    /* display: flex; */
     flex-basis: 15%;
     margin-right: 0.3rem;
     margin-left: 0.3rem;
@@ -495,10 +480,8 @@ body {
   .inputs__product {
     background: transparent;
     width: 50%;
-    margin-left: 0;
-    /* color: green; */
+    margin-left: 1rem;
     font-size: 1.6rem;
-    /* margin-left: 1rem; */
   }
   .inputs__price {
     width: 20%;
