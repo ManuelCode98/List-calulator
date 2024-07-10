@@ -27,14 +27,16 @@ export const removeIdsUnderlined = ()=>{
     const saveIdsNoDelete = localStorage.setItem( 2, JSON.stringify( ids ) );
 
     
+
+    console.log('removeIdsUnderlined');
+    console.log(ids);
+    console.log(arrIndexUnderlineNoRepeat);
             
           }
 
     // };
  
-    console.log(ids);
     
-    console.log(arrIndexUnderlineNoRepeat);
 
  };
 
@@ -44,8 +46,6 @@ export const LoadStaticIds = ()=>{
     const loadIdsLocal = JSON.parse(localStorage.getItem( 2 ) );
 
     ids = loadIdsLocal;
-
-    // console.log(ids);
 
  };
 

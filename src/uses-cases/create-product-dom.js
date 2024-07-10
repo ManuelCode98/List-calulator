@@ -46,7 +46,8 @@ export const loadProductDom = async()=>{
         // Llama a la funcion que va a mostrar el precio total de todos los productos en el DOM
         showTotalPrice();
 
-            console.log('load Dom');
+    console.log('loadProductDom');
+    console.log(getIds);
 
  };  
 
@@ -56,10 +57,10 @@ export const createProductDom = ()=>{
     // Asi limpio el html para cargar los productos de abajo y que no se dupliquen
     containerInfo.innerHTML = '';
 
-    const getIndexs = JSON.parse(localStorage.getItem( 1 ) );
-    const getIds = JSON.parse(localStorage.getItem( 2 ) );
-    const getProduct = JSON.parse(localStorage.getItem( 3 ) );
-    const getTotalPrice = JSON.parse(localStorage.getItem( 4 ) );
+    const getIndexs     = JSON.parse( localStorage.getItem( 1 ) );
+    const getIds        = JSON.parse( localStorage.getItem( 2 ) );
+    const getProduct    = JSON.parse( localStorage.getItem( 3 ) );
+    const getTotalPrice = JSON.parse( localStorage.getItem( 4 ) );
 
 
     // const initialValue = 0;

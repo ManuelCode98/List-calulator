@@ -20,7 +20,7 @@ export const saveProductsLocal = (index)=>{
         const saveProducts = localStorage.setItem(3, JSON.stringify( inputsSaves ) );
 
         
-        // console.log('saveProducts If...');
+        console.log('If 1...');
     } else if ( getProductsArray.length && inputsSaves.length <= 1 ){
 
         // console.log(getProductsArray);
@@ -30,13 +30,13 @@ export const saveProductsLocal = (index)=>{
         // const saveProducts = localStorage.setItem(2, JSON.stringify( inputsSaves ) ); 
         
 
-        // console.log('saveProducts Else If...');
+        console.log('If 2...');
 
     } else if( getProductsArray.length && inputsSaves.length >= 2 ){
 
         const saveProducts = localStorage.setItem(3, JSON.stringify( inputsSaves ) );
 
-        // console.log('Tercer Else If');
+        console.log('If 3...');
 
     }
     

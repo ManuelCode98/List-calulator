@@ -30,12 +30,10 @@ export const indexUnderlineNoRepeat = ()=>{
     
             indexCeroSearch = getPriceCeroLocal.indexOf( valueSearch, indexCeroSearch + 1 ) ;
 
-        }
+        };
+
 
     };
 
-    console.log('underline no repeat');
-    console.log(arrIndexUnderlineNoRepeat);
+   
 };
-
-// console.log(arrIndexUnderlineNoRepeat);

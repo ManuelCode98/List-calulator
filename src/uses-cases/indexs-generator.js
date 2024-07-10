@@ -1,6 +1,7 @@
-import { inputsSaves, priceSaves } from "./create-product";
+import { getProductsArray } from "../../main";
+import { inputsSaves, loadInputSavesReload, priceSaves } from "./create-product";
 import { emptyArrayIndexsUndefined } from "./empty-array-element-undefined";
-import { generatorIds } from "./generator-ids";
+import { generatorIds, LoadStaticIds } from "./generator-ids";
 import { arrIndexUnderlineNoRepeat } from "./index-underline-no-repeat";
 import { saveProductsLocal } from "./save-products-local";
 import { totalPriceSaveLocal } from "./total-price-save-local";
@@ -23,8 +24,14 @@ export const removeIndexsUnderlined = ()=>{
 
         // Ahora guardamos todos los indices que no fueron eliminados
         const saveIndexsNoDelete = localStorage.setItem( 1, JSON.stringify( indexs) );
+
+    //     console.log('removeIndexsUnderlined');
+    // console.log(indexs);
+    // console.log(arrIndexUnderlineNoRepeat);
     
     };
+
+    
 
 };
       
@@ -34,6 +41,42 @@ export const saveIndexsLocal = ( pIndexs )=>{
     const saveIndexs = localStorage.setItem(1, JSON.stringify( pIndexs ) );
 
 };
+
+export const loadIndexLocal = ()=>{ 
+
+    if( indexs.length === 0 ){
+
+        const getIndexs = JSON.parse( localStorage.getItem( 1 ) );
+
+        
+        for (let i = 1; i < getIndexs.length + 1; i++) {
+
+            indexs.push( i );
+ 
+            // Creadmo esta variable para crear un nueva instancia y que me devuelva un array sin numeros repetidos
+            // const uniqueIndexValue = new Set(indexs);
+
+
+console.log(`valueGuardado: ${indexs}`);
+
+            // // Operador spread para recorrer la nueva instancia del array  
+            // saveIndexsLocal( [...uniqueIndexValue - 1 ] );
+
+            // console.log('unique value');
+            
+        }
+
+        // LoadStaticIds();
+
+        // loadInputSavesReload( getProductsArray );
+
+        
+        // totalPriceSaveLocal( 4, priceSaves );
+
+    }
+
+
+ };
 
 export const indexsGenerator = ()=>{ 
 
@@ -65,6 +108,7 @@ export const indexsGenerator = ()=>{
             // Creadmo esta variable para crear un nueva instancia y que me devuelva un array sin numeros repetidos
             const uniqueIndexValue = new Set(indexs);
 
+            console.log(`uniqueValue ${ [...uniqueIndexValue] }`);
 
             // Operador spread para recorrer la nueva instancia del array  
             saveIndexsLocal( [...uniqueIndexValue] );

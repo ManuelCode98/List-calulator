@@ -20,6 +20,8 @@ export const infoResultTotal  = document.querySelector('.info_result__total');
 
 export let inputsSaves    = [];
 
+/////////////////////////////////////////////////////////////////////////////////
+
 // Borrar del array los elementos tachados
 export const removeProductUnderlined = ()=>{  
 
@@ -39,14 +41,17 @@ export const removeProductUnderlined = ()=>{
 
  };
 
+ console.log('removeProductUnderlined');
+ console.log(inputsSaves);
+
+ //////////////////////////////////////////////////////////
+
 // Carga el inputSaves con el localStorage guardado para que el archivo main lo puede leer tan solo al cargar la pagina 
 export const loadStaticInputSaves = ()=>{ 
 
     const getInputSavesLocal = JSON.parse(localStorage.getItem( 3 ) );
 
     inputsSaves = getInputSavesLocal;
-
-    // console.log(inputsSaves);
 
  };
 
@@ -58,12 +63,20 @@ export const loadInputSaves = ( getProductsArray )=>{
   const priceValue   = inputPrice.value;
   const amountValue  = inputAmount.value;
 
+  // Todo mira si se estan cargando los inputs al recargar la pagina
+
   inputsSaves.push( [ productValue ,[ priceValue, 0 ], amountValue, 0 ]  );
 
-  saveProducts(inputsSaves) 
+  saveProducts( inputsSaves );
 
   
- };
+};
+
+export const loadInputSavesReload = ( getProductsArray )=>{ 
+
+  inputsSaves = getProductsArray;
+
+};
 
 export let inputsSavesLocal = [];
 
@@ -88,6 +101,10 @@ for (let i = 0; i < arrIndexUnderlineNoRepeat.length; i++) {
 
   
 }
+
+console.log('removePricesUnderlined');
+ console.log(priceSaves);
+
 /////////////////////////////////////////
 
 };
@@ -97,8 +114,6 @@ export const LoadStaticTotalPrice = ()=>{
   const getPriceSaves = JSON.parse( localStorage.getItem( 4 ) );
 
   priceSaves = getPriceSaves;
-
-  // console.log(priceSaves);
 
  };
 
@@ -147,11 +162,7 @@ export const createProduct = ()=>{
      // Guarda los precios de cada producto
     priceSaves.push( totalPrice );
 
-    console.log( priceSaves )
-
-//Todo Viendo si llamando la funcion arreglo el problema de que no sume todos los valores si hay elementos tachados
-// saveClassLineThrough();
-// LoadStaticTotalPrice();
+    console.log( priceSaves );
 
      // console.log(priceSaves);
 

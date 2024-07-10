@@ -5,29 +5,23 @@ import { eventButtonDelete } from './src/uses-cases/event-button-delete';
 import { eventClick, loadClickIndexFound } from './src/uses-cases/event-click';
 import { LoadStaticIds, ids, removeIdsUnderlined } from './src/uses-cases/generator-ids';
 import { indexUnderlineNoRepeat } from './src/uses-cases/index-underline-no-repeat';
+import { indexsGenerator, loadIndexLocal } from './src/uses-cases/indexs-generator';
 import { saveClassLineThrough, searchIndexLineThrough } from './src/uses-cases/save-class-line-through';
 import './style.css';
-      
 
-
-// indexUnderlineNoRepeat();
-
-searchIndexLineThrough();
-
-// removeIdsUnderlined(); 
+// searchIndexLineThrough();
 
 eventClick();
 
 eventButtonDelete();
 
-console.log('Main');
-
-
-
 export const getProductsArray = JSON.parse( localStorage.getItem( 3 ) );
 
 
   if(localStorage.length >= 1 ){
+
+    // Carga los indice en la variable virtual al recargar la pagina, esto hace que nos borre los elementos tachados si asi lo queremos
+    // loadIndexLocal();
 
     // Solo carga el array de los productos que estan en el local storage
     loadStaticInputSaves();
@@ -37,32 +31,23 @@ export const getProductsArray = JSON.parse( localStorage.getItem( 3 ) );
 
     // Solo carga el array de los ids que estan en el local storage
     LoadStaticIds();
+
+    searchIndexLineThrough();
     
     loadProductDom();
   
-    console.log('main if');
-  
-  }
-
-
-
-
-// todo arreglar condicion para que entre a consultar el local storage o no
-
-// checkProductArray();
-
-// console.log(JSON.parse( localStorage.getItem( 2 ) ).length);
+};
 
 document.querySelector('.inputs__add').addEventListener('click', (event)=>{
 
+  
   createProduct();
-
-  console.log('preess');
-
+  
   // No permite recargar la pagina al precionar el botton
   event.preventDefault();
+  
 
-} )
+} );
 
 
 document.querySelector('.app').addEventListener('keydown', (event) => {
@@ -70,19 +55,8 @@ document.querySelector('.app').addEventListener('keydown', (event) => {
 
   if(event.key === 'Enter'){
 
-    // saveClassLineThrough();
-
    createProduct();
    
-  //  createProductDom();
-   
-   console.log('main event');
-  //  CreateLocalStorage();
-   
-  }
+  };
 
-});
-
-
-
-
+} );

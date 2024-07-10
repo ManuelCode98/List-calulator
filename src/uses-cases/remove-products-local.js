@@ -18,6 +18,7 @@ export const removeItemLocal = async()=>{
     removeIdsUnderlined();
     removeProductUnderlined();
     removePricesUnderlined();
+
     
 
     // Al borrar los elementos de DOM esta funcion vacia el array de indexFound que se encarga de tachar los elementos que tiene el valor de cero
@@ -26,6 +27,7 @@ export const removeItemLocal = async()=>{
 
     //Luego que ya actualizamos todos los arrays con los elementos que no fueron borrados, llamamos la funcion que recargar los elementos del DOM
     loadProductDom();
+    
 
     // Si el localStorage tiene claves vacias, borrar todo el localStorage
     clearAllLocalStorage();

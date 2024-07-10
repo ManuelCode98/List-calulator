@@ -8,6 +8,7 @@ export let indexsFound = [];
 export const emptyIndexFound = async()=>{ 
 
     // Vacio el indexFound despues de precionar el boton de borrar
+    console.log('emptyIndexFound');
     indexsFound = [ ];
 
 
@@ -33,12 +34,7 @@ export const searchIndexLineThrough = ()=>{
         
                 searchElement = getIndexTotalPrice.indexOf( element, searchElement + 1 );
         
-            }
-        
-            
-
-            console.log(indexsFound);
-
+            };
         
         }; 
 
@@ -73,4 +69,4 @@ export const saveClassLineThrough = ()=>{
 
     // console.log( indexsFound );
 
- };
+};
