@@ -1,6 +1,6 @@
 import { getProductsArray } from "../../main";
 import { inputsSaves, loadInputSavesReload, priceSaves } from "./create-product";
-import { emptyArrayIndexsUndefined } from "./empty-array-element-undefined";
+import { arrIndexsUpdate, emptyArrayIndexsUndefined } from "./empty-array-element-undefined";
 import { generatorIds, LoadStaticIds } from "./generator-ids";
 import { arrIndexUnderlineNoRepeat } from "./index-underline-no-repeat";
 import { saveProductsLocal } from "./save-products-local";
@@ -19,17 +19,22 @@ export const removeIndexsUnderlined = ()=>{
     
         indexs.splice( arrIndexUnderlineNoRepeat[i], 1, 'undefined' );
 
-        // Le paso al array con algunos valores "undefined" para que los vacie y me retorne un nuevo array 
-        indexs = emptyArrayIndexsUndefined( indexs );
-
-        // Ahora guardamos todos los indices que no fueron eliminados
-        const saveIndexsNoDelete = localStorage.setItem( 1, JSON.stringify( indexs) );
+       
 
     //     console.log('removeIndexsUnderlined');
     // console.log(indexs);
     // console.log(arrIndexUnderlineNoRepeat);
     
     };
+
+
+     // Le paso al array con algunos valores "undefined" para que los vacie y me retorne un nuevo array 
+     emptyArrayIndexsUndefined( indexs );
+     
+     indexs = arrIndexsUpdate; 
+
+     // Ahora guardamos todos los indices que no fueron eliminados
+     const saveIndexsNoDelete = localStorage.setItem( 1, JSON.stringify( indexs ) );
 
     
 
@@ -80,7 +85,8 @@ console.log(`valueGuardado: ${indexs}`);
 
 export const indexsGenerator = ()=>{ 
 
-    if ( localStorage.length === 0){
+    // if ( localStorage.length === 0){
+        if ( localStorage.length >= 0){
 
         indexs.push( inputsSaves.length );
 
@@ -93,8 +99,11 @@ export const indexsGenerator = ()=>{
             
         totalPriceSaveLocal( 4, priceSaves );
 
+        console.log('if');
 
-    } else if(localStorage.length > 1 ) { 
+
+    } 
+    else if(localStorage.length > 1 ) { 
 
         // const getProducts = JSON.parse( localStorage.getItem( 2 ) );
 
@@ -102,6 +111,8 @@ export const indexsGenerator = ()=>{
 
         
         for (let i = 1; i < getIndexs.length + 2; i++) {
+
+            console.log('else');
 
             indexs.push( i );
 

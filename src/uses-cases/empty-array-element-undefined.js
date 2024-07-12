@@ -5,11 +5,14 @@ export let arrayFilterIds     = [ ];
 export let arrayFilterProduct = [ ];
 export let arrayFilterPrices  = [ ];
 
+
+export let arrIndexsUpdate;
+
 export const emptyArrayIndexsUndefined = ( emptyArr ) => { 
 
-  let arr;
+  // let arr;
 
-  return arr = emptyArr.filter( ( data ) => {
+  arrIndexsUpdate = emptyArr.filter( ( data ) => {
 
     // console.log(emptyArr);
     // console.log('empty Array Indexs Undefined');
@@ -18,38 +21,38 @@ export const emptyArrayIndexsUndefined = ( emptyArr ) => {
 
       
 
-    })
+    } );    
+};
 
 
-    
- };
+export let arrIdsUpdate;
 
 export const emptyArrayIdsUndefined = ( emptyArr ) => { 
 
-  let arr;
+  // let arr;
 
-  return arr = emptyArr.filter( ( data ) => {
+  arrIdsUpdate = emptyArr.filter( ( data ) => {
 
     // console.log(emptyArr);
-    console.log('empty Array Ids Undefined');
+    // console.log('empty Array Ids Undefined');
 
       return emptyArr = data != 'undefined';
 
       
 
-    })
+    } );
 
 
-    
+};
 
- };
 
+export let arrProductUpdate;
 
 export const emptyArrayProductUndefined = ( emptyArr ) => { 
 
-  let arr;
+  // let arr;
 
-  return arr =  emptyArr.filter( ( data ) => {
+  arrProductUpdate =  emptyArr.filter( ( data ) => {
 
     // console.log(emptyArr);
     // console.log('empty Array Product Undefined');
@@ -65,21 +68,28 @@ export const emptyArrayProductUndefined = ( emptyArr ) => {
 
  };
 
+export let arrPricesUpdate;
 
 export const emptyArrayPricesUndefined = ( emptyArr ) => { 
 
-  let arr;
+  // console.log(`emptyArrFuera: ${emptyArr}`);
 
-  return arr = emptyArr.filter( ( data ) => {
+  // let arr;
 
+
+  // return arr = emptyArr.filter( ( data ) => {
+    arrPricesUpdate = emptyArr.filter( ( data ) => {
+
+      // console.log(`emptyArr: ${emptyArr}`);
+      // console.log(`data: ${data}`);
 
       return emptyArr = data != 'undefined';
 
       
 
-    })
+    } );
 
-
+    // console.log(arr);
     
 
  };

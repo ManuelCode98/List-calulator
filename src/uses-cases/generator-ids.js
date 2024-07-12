@@ -1,7 +1,7 @@
-import { emptyArrayIdsUndefined } from "./empty-array-element-undefined";
+import { arrIdsUpdate, emptyArrayIdsUndefined } from "./empty-array-element-undefined";
 import { arrIndexUnderlineNoRepeat } from "./index-underline-no-repeat";
 
-export let ids = [];
+export let ids = [ ];
 export let id = ' ';
 
 export const removeIdsUnderlined = ()=>{ 
@@ -19,22 +19,23 @@ export const removeIdsUnderlined = ()=>{
     
             ids.splice( arrIndexUnderlineNoRepeat[i], 1, 'undefined' );
         
-            // Le paso al array con algunos valores "undefined" para que los vacie y me retorne un nuevo array 
-            // console.log(ids = emptyArrayIdsUndefined( ids ) );
-            ids = emptyArrayIdsUndefined( ids );
-
-            // Ahora guardamos todos los Ids que no fueron eliminados
-    const saveIdsNoDelete = localStorage.setItem( 2, JSON.stringify( ids ) );
+           
 
     
 
-    console.log('removeIdsUnderlined');
-    console.log(ids);
-    console.log(arrIndexUnderlineNoRepeat);
+    // console.log('removeIdsUnderlined');
+    // console.log(ids);
+    // console.log(arrIndexUnderlineNoRepeat);
             
           }
 
-    // };
+           // Le paso al array con algunos valores "undefined" para que los vacie y me retorne un nuevo array 
+            // console.log(ids = emptyArrayIdsUndefined( ids ) );
+            emptyArrayIdsUndefined( ids );
+            ids = arrIdsUpdate;
+
+            // Ahora guardamos todos los Ids que no fueron eliminados
+        const saveIdsNoDelete = localStorage.setItem( 2, JSON.stringify( ids ) );
  
     
 

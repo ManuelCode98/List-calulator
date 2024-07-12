@@ -15,14 +15,14 @@ export const loadClickIndexFound = ()=>{
  
     clickIndexFound = indexsFound;
 
-    console.log(clickIndexFound);
+    // console.log(clickIndexFound);
 
 };
 
 export const eventClick = (element)=>{ 
 
     
-            console.log('click');
+            // console.log('click');
         containerInfo.addEventListener('click', (event)=>{
             // selectProductDOM.addEventListener('click', (event)=>{
 

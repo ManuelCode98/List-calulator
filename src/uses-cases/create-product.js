@@ -1,5 +1,5 @@
 import { createProductDom, loadProductDom } from "./create-product-dom";
-import { emptyArrayPricesUndefined, emptyArrayProductUndefined } from "./empty-array-element-undefined";
+import { arrPricesUpdate, arrProductUpdate, emptyArrayPricesUndefined, emptyArrayProductUndefined } from "./empty-array-element-undefined";
 import { generatorIds, id, ids } from "./generator-ids";
 import { arrIndexUnderlineNoRepeat, indexUnderlineNoRepeat } from "./index-underline-no-repeat";
 import { index, indexs, indexsGenerator, } from "./indexs-generator";
@@ -31,18 +31,27 @@ export const removeProductUnderlined = ()=>{
     
     inputsSaves.splice( arrIndexUnderlineNoRepeat[i], 1, 'undefined' );
 
-    // Le paso al array con algunos valores "undefined" para que los vacie y me retorne un nuevo array 
+    
+  }
+
+
+// Le paso al array con algunos valores "undefined" para que los vacie y me retorne un nuevo array 
     // console.log( inputsSaves = emptyArrayProductUndefined( inputsSaves ) );
-    inputsSaves = emptyArrayProductUndefined( inputsSaves );
+    emptyArrayProductUndefined( inputsSaves );
+    inputsSaves = arrProductUpdate;
 
     // Ahora guardamos todos los productos que no fueron eliminados
     const saveProductsNoDelete = localStorage.setItem( 3, JSON.stringify( inputsSaves ) );
-  }
+
+
+//  console.log('removeProductUnderlined');
+//  console.log(inputsSaves);
+
+
 
  };
 
- console.log('removeProductUnderlined');
- console.log(inputsSaves);
+
 
  //////////////////////////////////////////////////////////
 
@@ -87,23 +96,28 @@ export const removePricesUnderlined = ()=>{
 
   //Todo revisar que todo este marchando bien
 
-for (let i = 0; i < arrIndexUnderlineNoRepeat.length; i++) {
+  // let arrUndefined;
+
+  for (let i = 0; i < arrIndexUnderlineNoRepeat.length; i++) {
   
   priceSaves.splice( arrIndexUnderlineNoRepeat[i], 1, 'undefined' );
 
   // Le paso al array con algunos valores "undefined" para que los vacie y me retorne un nuevo array 
   // console.log( priceSaves = emptyArrayPricesUndefined( priceSaves ) );
 
-  priceSaves = emptyArrayPricesUndefined( priceSaves );
+  // priceSaves = emptyArrayPricesUndefined( priceSaves );
+  
+  }
 
-  // Ahora guardamos todos los prices que no fueron eliminados
+  emptyArrayPricesUndefined( priceSaves );
+
+  priceSaves = arrPricesUpdate;
+
+//   // Ahora guardamos todos los prices que no fueron eliminados
   localStorage.setItem( 4, JSON.stringify( priceSaves ) );
 
-  
-}
-
-console.log('removePricesUnderlined');
- console.log(priceSaves);
+// console.log('removePricesUnderlined');
+//  console.log(priceSaves);
 
 /////////////////////////////////////////
 
@@ -162,7 +176,7 @@ export const createProduct = ()=>{
      // Guarda los precios de cada producto
     priceSaves.push( totalPrice );
 
-    console.log( priceSaves );
+    // console.log( priceSaves );
 
      // console.log(priceSaves);
 
@@ -188,8 +202,8 @@ export const createProduct = ()=>{
 
 };
 
-export const loadItemsRemove = ()=>{ 
+// export const loadItemsRemove = ()=>{ 
 
-  // inputsSaves = 
+//   // inputsSaves = 
 
-};
+// };

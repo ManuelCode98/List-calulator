@@ -9,7 +9,7 @@ import { indexsGenerator, loadIndexLocal } from './src/uses-cases/indexs-generat
 import { saveClassLineThrough, searchIndexLineThrough } from './src/uses-cases/save-class-line-through';
 import './style.css';
 
-// searchIndexLineThrough();
+searchIndexLineThrough();
 
 eventClick();
 
@@ -20,8 +20,8 @@ export const getProductsArray = JSON.parse( localStorage.getItem( 3 ) );
 
   if(localStorage.length >= 1 ){
 
-    // Carga los indice en la variable virtual al recargar la pagina, esto hace que nos borre los elementos tachados si asi lo queremos
-    // loadIndexLocal();
+    // Carga los indice en la variable virtual al recargar la pagina, esto hace que nos pueda borre los elementos tachados si asi lo queremos
+    loadIndexLocal();
 
     // Solo carga el array de los productos que estan en el local storage
     loadStaticInputSaves();
@@ -32,9 +32,11 @@ export const getProductsArray = JSON.parse( localStorage.getItem( 3 ) );
     // Solo carga el array de los ids que estan en el local storage
     LoadStaticIds();
 
-    searchIndexLineThrough();
-    
+    // searchIndexLineThrough();
+
     loadProductDom();
+
+
   
 };
 
