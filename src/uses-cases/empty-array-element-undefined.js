@@ -1,5 +1,4 @@
-import { clickIndexFound } from "./event-click";
-
+// Variables exportadas y listas para ser cargadas
 export let arrayFilterIndexs  = [ ];
 export let arrayFilterIds     = [ ];
 export let arrayFilterProduct = [ ];
@@ -8,88 +7,66 @@ export let arrayFilterPrices  = [ ];
 
 export let arrIndexsUpdate;
 
+/**
+ * Funcion que recibe un array con elementos "undefined" y los filtra y deja solo elementos que no estan "undefined"
+ * @param { Array } emptyArr 
+ */
 export const emptyArrayIndexsUndefined = ( emptyArr ) => { 
-
-  // let arr;
 
   arrIndexsUpdate = emptyArr.filter( ( data ) => {
 
-    // console.log(emptyArr);
-    // console.log('empty Array Indexs Undefined');
+    return emptyArr = data != 'undefined';
 
-      return emptyArr = data != 'undefined';
+  } ); 
 
-      
-
-    } );    
 };
 
 
 export let arrIdsUpdate;
 
+/**
+ * Funcion que recibe un array con elementos "undefined" y los filtra y deja solo elementos que no estan "undefined"
+ * @param { Array } emptyArr 
+ */
 export const emptyArrayIdsUndefined = ( emptyArr ) => { 
-
-  // let arr;
 
   arrIdsUpdate = emptyArr.filter( ( data ) => {
 
-    // console.log(emptyArr);
-    // console.log('empty Array Ids Undefined');
+    return emptyArr = data != 'undefined';
 
-      return emptyArr = data != 'undefined';
-
-      
-
-    } );
-
+  } );
 
 };
 
 
 export let arrProductUpdate;
 
+/**
+ * Funcion que recibe un array con elementos "undefined" y los filtra y deja solo elementos que no estan "undefined"
+ * @param { Array } emptyArr 
+ */
 export const emptyArrayProductUndefined = ( emptyArr ) => { 
-
-  // let arr;
 
   arrProductUpdate =  emptyArr.filter( ( data ) => {
 
-    // console.log(emptyArr);
-    // console.log('empty Array Product Undefined');
+    return emptyArr = data != 'undefined';
 
-      return emptyArr = data != 'undefined';
+  } );
 
-      
-
-    });
-
-
-    
-
- };
+};
 
 export let arrPricesUpdate;
 
+/**
+ * Funcion que recibe un array con elementos "undefined" y los filtra y deja solo elementos que no estan "undefined"
+ * @param { Array } emptyArr 
+ */
 export const emptyArrayPricesUndefined = ( emptyArr ) => { 
 
-  // console.log(`emptyArrFuera: ${emptyArr}`);
+  arrPricesUpdate = emptyArr.filter( ( data ) => {
 
-  // let arr;
+    return emptyArr = data != 'undefined';  
 
+  } );
 
-  // return arr = emptyArr.filter( ( data ) => {
-    arrPricesUpdate = emptyArr.filter( ( data ) => {
-
-      // console.log(`emptyArr: ${emptyArr}`);
-      // console.log(`data: ${data}`);
-
-      return emptyArr = data != 'undefined';
-
-      
-
-    } );
-
-    // console.log(arr);
-    
-
- };
+};

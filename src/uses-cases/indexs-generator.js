@@ -1,7 +1,6 @@
-import { getProductsArray } from "../../main";
-import { inputsSaves, loadInputSavesReload, priceSaves } from "./create-product";
+import { inputsSaves, priceSaves } from "./create-product";
 import { arrIndexsUpdate, emptyArrayIndexsUndefined } from "./empty-array-element-undefined";
-import { generatorIds, LoadStaticIds } from "./generator-ids";
+import { generatorIds } from "./generator-ids";
 import { arrIndexUnderlineNoRepeat } from "./index-underline-no-repeat";
 import { saveProductsLocal } from "./save-products-local";
 import { totalPriceSaveLocal } from "./total-price-save-local";
@@ -9,6 +8,7 @@ import { totalPriceSaveLocal } from "./total-price-save-local";
 export let indexs = [ ];
 export let index = 0; 
 
+// Quita los indices que estan tachados
 export const removeIndexsUnderlined = ()=>{  
 
     //Cargo el array de indices con lo que esta en el local storage
@@ -19,34 +19,28 @@ export const removeIndexsUnderlined = ()=>{
     
         indexs.splice( arrIndexUnderlineNoRepeat[i], 1, 'undefined' );
 
-       
-
-    //     console.log('removeIndexsUnderlined');
-    // console.log(indexs);
-    // console.log(arrIndexUnderlineNoRepeat);
-    
     };
 
-
-     // Le paso al array con algunos valores "undefined" para que los vacie y me retorne un nuevo array 
-     emptyArrayIndexsUndefined( indexs );
+    // Le paso al array con algunos valores "undefined" para que los vacie y me retorne un nuevo array 
+    emptyArrayIndexsUndefined( indexs );
      
-     indexs = arrIndexsUpdate; 
+    indexs = arrIndexsUpdate; 
 
-     // Ahora guardamos todos los indices que no fueron eliminados
-     const saveIndexsNoDelete = localStorage.setItem( 1, JSON.stringify( indexs ) );
-
-    
+    // Ahora guardamos todos los indices que no fueron eliminados
+    const saveIndexsNoDelete = localStorage.setItem( 1, JSON.stringify( indexs ) ); 
 
 };
-      
 
+      
+// Guarda los indices creados en el local storage
 export const saveIndexsLocal = ( pIndexs )=>{ 
     
     const saveIndexs = localStorage.setItem(1, JSON.stringify( pIndexs ) );
 
 };
 
+
+// Carga los indices que estan en el local storage
 export const loadIndexLocal = ()=>{ 
 
     if( indexs.length === 0 ){
@@ -57,36 +51,19 @@ export const loadIndexLocal = ()=>{
         for (let i = 1; i < getIndexs.length + 1; i++) {
 
             indexs.push( i );
- 
-            // Creadmo esta variable para crear un nueva instancia y que me devuelva un array sin numeros repetidos
-            // const uniqueIndexValue = new Set(indexs);
-
-
-console.log(`valueGuardado: ${indexs}`);
-
-            // // Operador spread para recorrer la nueva instancia del array  
-            // saveIndexsLocal( [...uniqueIndexValue - 1 ] );
-
-            // console.log('unique value');
             
-        }
+        };
 
-        // LoadStaticIds();
+    };
 
-        // loadInputSavesReload( getProductsArray );
-
-        
-        // totalPriceSaveLocal( 4, priceSaves );
-
-    }
+};
 
 
- };
 
+// Genera los indices
 export const indexsGenerator = ()=>{ 
 
-    // if ( localStorage.length === 0){
-        if ( localStorage.length >= 0){
+    if ( localStorage.length === 0){
 
         indexs.push( inputsSaves.length );
 
@@ -96,44 +73,31 @@ export const indexsGenerator = ()=>{
 
         saveProductsLocal( 3 );
 
-            
         totalPriceSaveLocal( 4, priceSaves );
 
-        console.log('if');
-
-
-    } 
-    else if(localStorage.length > 1 ) { 
-
-        // const getProducts = JSON.parse( localStorage.getItem( 2 ) );
+    } else if(localStorage.length > 1 ) { 
 
         const getIndexs = JSON.parse( localStorage.getItem( 1 ) );
 
         
         for (let i = 1; i < getIndexs.length + 2; i++) {
 
-            console.log('else');
-
             indexs.push( i );
 
-            // Creadmo esta variable para crear un nueva instancia y que me devuelva un array sin numeros repetidos
+            // Creamos esta variable para crear un nueva instancia y que me devuelva un array sin numeros repetidos
             const uniqueIndexValue = new Set(indexs);
-
-            console.log(`uniqueValue ${ [...uniqueIndexValue] }`);
 
             // Operador spread para recorrer la nueva instancia del array  
             saveIndexsLocal( [...uniqueIndexValue] );
             
-        }
+        };
 
         generatorIds( 2 )
 
         saveProductsLocal( 3 );
 
-        
         totalPriceSaveLocal( 4, priceSaves );
 
-    }
-
+    };
     
- };
+};

@@ -1,42 +1,32 @@
 import { getProductsArray } from "../../main";
-import { inputsSaves, inputsSavesLocal, loadInputSaves } from "./create-product";
+import { inputsSaves, loadInputSaves } from "./create-product";
 
-// export let getProductsArray;
 
+// Guarda el los productos en el local storage
 export const saveProducts = (pInputsSaves)=>{ 
 
-    // const saveProducts = localStorage.setItem(2, JSON.stringify( inputsSaves ) );  
     localStorage.setItem(3, JSON.stringify( pInputsSaves ) );  
 
-    // console.log(pInputsSaves);
- };
+};
 
-export const saveProductsLocal = (index)=>{ 
+// Guarda los productos en el local storage
+export const saveProductsLocal = ( clave ) => { 
+
+    if( inputsSaves.length && getProductsArray === null) {
+
+        JSON.parse(localStorage.getItem( clave ) );
+
+        localStorage.setItem(clave, JSON.stringify( inputsSaves ) );
 
 
-     if( inputsSaves.length && getProductsArray === null) {
-        const getProducts = JSON.parse(localStorage.getItem( 3 ) );
-
-        const saveProducts = localStorage.setItem(3, JSON.stringify( inputsSaves ) );
-
-        
-        console.log('If 1...');
     } else if ( getProductsArray.length && inputsSaves.length <= 1 ){
 
-        // console.log(getProductsArray);
-
+        // Carga todos los productos en la variable virtual
         loadInputSaves( getProductsArray );
-
-        // const saveProducts = localStorage.setItem(2, JSON.stringify( inputsSaves ) ); 
-        
-
-        console.log('If 2...');
 
     } else if( getProductsArray.length && inputsSaves.length >= 2 ){
 
-        const saveProducts = localStorage.setItem(3, JSON.stringify( inputsSaves ) );
-
-        console.log('If 3...');
+        localStorage.setItem(clave, JSON.stringify( inputsSaves ) );
 
     }
     

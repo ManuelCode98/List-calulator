@@ -1,5 +1,5 @@
 
-
+// Carga el nuevo precio total si algun producto es tachado
 export const loadTotalPriceLineThrough = ()=>{ 
 
     const getTotalPriceLocal = JSON.parse( localStorage.getItem( 4 ) );

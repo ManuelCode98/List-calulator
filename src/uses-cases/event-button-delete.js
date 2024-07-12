@@ -1,43 +1,33 @@
-import { loadProductDom } from "./create-product-dom";
 import { removeItemLocal } from "./remove-products-local";
-import { saveClassLineThrough } from "./save-class-line-through";
 
 
-
-const selectButtonDelete = document.querySelector('.btns__btn-delete--1');
+const selectButtonDelete    = document.querySelector('.btns__btn-delete--1');
 const selectButtonDeleteAll = document.querySelector('.btns__btn-delete--2');
 
+// Funcion de los botones de borrar
 export const eventButtonDelete = ()=>{ 
-
-    
 
     selectButtonDelete.addEventListener( 'click', ( event ) => {
 
-        // console.error('Button delete no implementado');
-
         removeItemLocal();
-    
-        
-    
-    });
+
+    } );
 
     selectButtonDeleteAll.addEventListener( 'click', (event) => {
-
 
         buttonDeleteAll();
 
     } );
 
-
-
 };
 
+
+// Borra el local storage y recarga la pagina
 const buttonDeleteAll = ()=>{ 
 
     localStorage.clear();
 
     window.location.reload();
     
-
- };
+};
 

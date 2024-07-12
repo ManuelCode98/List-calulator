@@ -8,14 +8,8 @@ export const indexUnderlineNoRepeat = ()=>{
 
     arrIndexUnderlineNoRepeat = [...newSetArr];
 
-    // localStorage.setItem( 5, arrIndexUnderlineNoRepeat );
-
-    // const getIndexOfUnderline = JSON.parse( localStorage.getItem( 5 ) );
-
 
     if( arrIndexUnderlineNoRepeat.length === 0 ){
-        // if( getIndexOfUnderline.length === 0 ){   
-
 
         const getPriceCeroLocal = JSON.parse( localStorage.getItem( 4 ) );
 
@@ -23,7 +17,7 @@ export const indexUnderlineNoRepeat = ()=>{
 
         let indexCeroSearch = getPriceCeroLocal.indexOf( valueSearch );
 
-
+        // Busca el indice de los elementos que estan en 0
         while ( indexCeroSearch != -1 ){
 
             arrIndexUnderlineNoRepeat.push( indexCeroSearch );
@@ -34,6 +28,5 @@ export const indexUnderlineNoRepeat = ()=>{
 
 
     };
-
-   
+  
 };
