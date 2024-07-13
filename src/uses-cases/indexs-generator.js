@@ -35,7 +35,7 @@ export const removeIndexsUnderlined = ()=>{
 // Guarda los indices creados en el local storage
 export const saveIndexsLocal = ( pIndexs )=>{ 
     
-    const saveIndexs = localStorage.setItem(1, JSON.stringify( pIndexs ) );
+    localStorage.setItem(1, JSON.stringify( pIndexs ) );
 
 };
 
@@ -75,20 +75,19 @@ export const indexsGenerator = ()=>{
 
         totalPriceSaveLocal( 4, priceSaves );
 
-    } else if(localStorage.length > 1 ) { 
+    } else if( localStorage.length >= 1 ) { 
 
         const getIndexs = JSON.parse( localStorage.getItem( 1 ) );
 
-        
-        for (let i = 1; i < getIndexs.length + 2; i++) {
+            for (let i = 1; i < getIndexs.length + 2; i++) {
 
             indexs.push( i );
 
             // Creamos esta variable para crear un nueva instancia y que me devuelva un array sin numeros repetidos
-            const uniqueIndexValue = new Set(indexs);
+            const uniqueIndexValue = new Set( indexs );
 
             // Operador spread para recorrer la nueva instancia del array  
-            saveIndexsLocal( [...uniqueIndexValue] );
+            saveIndexsLocal( [ ...uniqueIndexValue ] );
             
         };
 

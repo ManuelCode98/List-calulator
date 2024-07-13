@@ -30,5 +30,8 @@ export const removeItemLocal = ()=>{
 
     // Si el localStorage tiene claves vacias, borrar todo el localStorage
     clearAllLocalStorage();  
+
+
+    window.location.reload();
     
 };
