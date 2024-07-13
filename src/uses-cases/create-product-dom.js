@@ -29,8 +29,6 @@ export const loadProductDom = ()=>{
 
 
     for (let i = 0; i < getIndexs.length; i++) {
-
-        console.log(getProduct[i][0]);
         
         containerInfo.innerHTML += `
             <div class='info__span-product'>
@@ -65,8 +63,6 @@ export const createProductDom = ()=>{
 
 
     for (let i = 0; i < getIndexs.length; i++) {
-
-        console.log(getProduct[i][0]);
         
         containerInfo.innerHTML += `
             <div class='info__span-product'>

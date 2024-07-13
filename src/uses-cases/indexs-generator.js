@@ -27,7 +27,10 @@ export const removeIndexsUnderlined = ()=>{
     indexs = arrIndexsUpdate; 
 
     // Ahora guardamos todos los indices que no fueron eliminados
-    const saveIndexsNoDelete = localStorage.setItem( 1, JSON.stringify( indexs ) ); 
+    const saveIndexsNoDelete = localStorage.setItem( 1, JSON.stringify( indexs ) );
+    
+    // Vuelva a vaciar la variable para que no se se agregue un indice de mas 
+    indexs = [ ];
 
 };
 
