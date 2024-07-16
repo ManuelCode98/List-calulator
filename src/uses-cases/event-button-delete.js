@@ -25,9 +25,16 @@ export const eventButtonDelete = ()=>{
 // Borra el local storage y recarga la pagina
 const buttonDeleteAll = ()=>{ 
 
-    localStorage.clear();
+    const alertRemoveProduct= confirm('Estas seguro de eliminar todos los productos?', );
 
-    window.location.reload();
+    if( alertRemoveProduct ){
+
+        localStorage.clear();
+
+        window.location.reload();
+    }
+
+    
     
 };
 
