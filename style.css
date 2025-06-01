@@ -4,10 +4,10 @@ html {
 }
 
 body {
-  padding: 0;
+  padding: 20px;
   margin: 0;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
-  background-color: #424141;
+  background-color: #dbd9d9;
 }
 
 .layout {
@@ -26,22 +26,22 @@ body {
 
 .header__title {
   font-size: 5rem;
-  color: #c1c4c1;
+  color: #7c7b7b;
   text-shadow: -1px 0px 3px #000 , -2px 0px 3px #000, -3px 0px 3px #000, -4px 0px 3px #000;
   transition: all 500ms;
 }
 
 .header__title:hover {
-  color: #3ef548;
+  color: #91d194;
   text-shadow: -1px 0px 4px #000 , -2px 0px 4px #000, -3px 0px 4px #000, -4px 0px 4px #000;
   transform: scaleX( 1.06 );
 }
 
 .app {
   display: flex;
-  max-width: 50%; 
+  width: 50%; 
   flex-direction: column;
-  background-color: #7b787c;
+  background-color: #a6a8a8;
   border: 1px solid rgb(0, 0, 0);
   box-shadow: -5px 5px 10px rgb(48, 46, 46);
   
@@ -68,7 +68,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-basis: 45%;
+  flex-basis: 60%;
   margin-left: 1rem;
 
 }
@@ -77,14 +77,9 @@ body {
   display: flex;
   flex-basis: 20%;
   justify-content: center;
-  
+  border: 1px solid;
 }
-.labels__amount {
-  display: flex;
-  flex-basis: 12%;
-  justify-content: center;
-  
-}
+
 .labels__total-price {
   display: flex;
   flex-basis: 20%;
@@ -96,24 +91,11 @@ body {
 .container__form {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: space-around;
   flex-basis: 100%;
   gap: 2rem;
 
 }
-
-/* .inputs__product {
-  display: flex;
-  background: transparent;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid rgb(190, 184, 184);
-  width: 45%;
-  margin-left: 1rem;
-  overflow: hidden;
-  font-size: 1.6rem;
-} */
-
 
 .inputs__price {
   display: flex;
@@ -121,7 +103,7 @@ body {
   border: none;
   outline: none;
   border-bottom: 1px solid rgb(190, 184, 184);
-  width: 62%;
+  width: 50%;
   margin-right: 1.2rem;
   text-indent: 1rem;
   overflow: hidden;
@@ -132,18 +114,6 @@ body {
   color: rgb(39, 31, 31);
 }
 
-.inputs__amount {
-  display: flex;
-  opacity: 0;
-  background: transparent;
-  border: none;
-  outline: none;
-  border-bottom: 1px solid rgb(190, 184, 184);
-  width: 7%;
-  overflow: hidden;
-  font-size: 1.6rem;
-  color: black;
-}
 
 .inputs__add {
   display: flex;
@@ -186,7 +156,7 @@ body {
   display: flex;
   width: 100%;
   padding: 0.3rem;
-  justify-content: start;
+  justify-content: space-around;
   transition: 500ms;
 }
 
@@ -209,34 +179,22 @@ body {
 
 .info__product {
   display: flex;
-  width: 50%;
-  max-width: 50%;
-  min-width: 50%;
+  width: 40%;
+  justify-content: start;
   cursor: pointer;
   overflow: hidden;
 }
 .info__price {
   display: flex;
-  justify-content: start;
-  width: 19%;
-  max-width: 19%;
-  min-width: 19%;
-  margin-right: 1.2rem;
-  overflow: hidden;
-}
-.info__amount {
-  width: 10%;
-  max-width: 10%;
-  min-width: 10%;
+  justify-content: center;
+  width: 20%;
   margin-right: 1.2rem;
   overflow: hidden;
 }
 
 .info__total-price {
-  text-align: start;
-  width: 20%;
-  max-width: 20%;
-  min-width: 20%;
+  text-align: center;
+  width: 40%;
   overflow: hidden;
 }
 
@@ -327,6 +285,27 @@ body {
 
 
 /* Response */
+
+@media screen and ( max-width : 1010px ) { 
+
+  container__info_result {
+    padding-right: 20px;
+    
+  }
+
+  .info_result__title {
+    width: 40%;
+    text-align: center;
+
+  }
+
+  .info_result__total {
+  
+  width: 40%;
+  text-align: end;
+  }
+
+}
 
 @media screen and ( max-width : 918px ) {
 
@@ -455,6 +434,10 @@ body {
   .layout {
     margin-top: 2rem;
   }
+
+  .app {
+    width: 100%;
+  }
   
   .header__title {
     font-size: 6rem;
@@ -464,20 +447,13 @@ body {
   }
 
   .labels__product {
-    flex-basis: 44%;
+    flex-basis: 48%;
   }
   
   .labels__price {
-    flex-basis: 18%;
+    flex-basis: 22%;
     text-align: center;
   }
-
-  .labels__amount {
-    flex-basis: 15%;
-    margin-left: 0.5rem;
- 
-  }
-
   .labels__total-price {
     flex-basis: 15%;
     margin-right: 0.3rem;
@@ -490,12 +466,6 @@ body {
     gap: 0.5rem;
   }
 
-  /* .inputs__product {
-    background: transparent;
-    width: 50%;
-    margin-left: 1rem;
-    font-size: 1.6rem;
-  } */
   .inputs__price {
     width: 62%;
     margin-right: 0;
@@ -530,15 +500,23 @@ body {
     max-width: 21%;
     min-width: 21%;
   }
-  .info__amount {
-    width: 8%;
-    max-width: 8%;
-    min-width: 8%;
-  }
+  
   .info__total-price {
     width: 25%;
     max-width: 25%;
     min-width: 25%;
+  }
+
+  .info_result__title {
+    width: 40%;
+    text-align: center;
+
+  }
+
+  .info_result__total {
+  
+  width: 40%;
+  text-align: end;
   }
 
 

@@ -162,7 +162,7 @@ export const createProduct = ()=>{ // revisado
 
     // totalPrice multiplica el valor del producto por la cantidad de productos que se ingresen
     // let totalPrice = priceValue * amountValue;
-     let totalPrice = priceValue;
+     let totalPrice = priceValue * 1;
 
     // totalTime guarda los tiempos de cada venta
     let totalTime = [ hour, minutes, seconds ];
