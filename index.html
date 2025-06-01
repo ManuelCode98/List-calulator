@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="public/list.ico" /> <!-- /vite.svg -->
+    <link rel="icon" href="/list.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -10,7 +10,7 @@
     <!-- fonts awesome -->
      <link rel="stylesheet" type="text/css" href="assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css"/>
 
-    <title>List Calculator</title>
+    <title>Expense Calculator</title>
   </head>
   <body>
 
@@ -18,7 +18,7 @@
 
       <header class="app__header"> 
         <!-- <h1 class="header__title">Estos son tus Productos</h1> -->
-        <h1 class="header__title">Productos</h1>
+        <h1 class="header__title">Gastos</h1>
       </header>
 
       <div class="app">
@@ -26,17 +26,18 @@
         <div class="app__container">
 
           <div class="container__labels">
-            <label for="product" class="labels__product">Producto</label>
-            <label for="price" class="labels__price">Precio C/U</label>
-            <label for="amount" class="labels__amount">Cant</label>
-            <span class="labels__total-price">Valor total</span>
+            <!-- <label for="product" class="labels__product">Venta</label> -->
+            <span class="labels__product">Cuanto gasto</span>
+            <!-- <label for="price" class="labels__price">****** ***</label> -->
+            <!-- <label for="amount" class="labels__amount">Cant</label> -->
+            <span class="labels__total-price">Hora</span>
           </div>
           
           
           <form class="container__form">
-            <input type="text" id="product" class="inputs__product" placeholder="Ingresa el producto"/>
+            <!-- <input type="text" id="product" class="inputs__product" placeholder="Ingresa el producto"/> -->
             <input type="number" id="price" class="inputs__price" placeholder="$9999" />
-            <input type="number" id="amount" class="inputs__amount" value="1" />
+            <!-- <input type="number" id="amount" class="inputs__amount" value="1" disabled /> -->
             <button class="inputs__add">Agregar</button>
           </form>
   
@@ -45,7 +46,7 @@
           </div>
   
           <div class="container__info_result">
-            <span class="info_result__title">Valor a pagar</span>
+            <span class="info_result__title">Total Gastado</span>
             <span class="info_result__total">0</span>
           </div>
   
@@ -53,7 +54,7 @@
   
         <div class="app__btns">
   
-            <button class="btns__btn-delete--1">Borrar completados</button>
+            <button class="btns__btn-delete--1">Borrar tachados</button>
             <button class="btns__btn-delete--2">Borrar todos!</button>
   
         </div>

@@ -1,5 +1,5 @@
 // import { CreateLocalStorage, checkProductArray } from './src/uses-cases/create-local-storage';
-import { LoadStaticTotalPrice, createProduct, loadStaticInputSaves } from './src/uses-cases/create-product';
+import { LoadStaticTotalPrice, createProduct, loadStaticInputSaves, loadTimeLocal } from './src/uses-cases/create-product';
 import { loadProductDom } from './src/uses-cases/create-product-dom';
 import { eventButtonDelete } from './src/uses-cases/event-button-delete';
 import { eventClick } from './src/uses-cases/event-click';
@@ -8,7 +8,6 @@ import { loadIndexLocal } from './src/uses-cases/indexs-generator';
 import { searchIndexLineThrough } from './src/uses-cases/save-class-line-through';
 import './style.css';
 
-// searchIndexLineThrough();
 
 eventClick();
 
@@ -33,6 +32,9 @@ if(localStorage.length >= 1 ){
 
   // Busca el indice de los productos que estan tachados
   searchIndexLineThrough();
+
+  // TODO Cargar la hora del local storage en face de prueba
+  loadTimeLocal();
 
   // Carga los productos en el DOM al recargar el navegador
   loadProductDom();

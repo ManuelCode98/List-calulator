@@ -36,7 +36,7 @@ export const LoadStaticIds = ()=>{
  * 
  * @param {number} clave Espera el numero que sera la clave para guardar el id en el local storage en forma de array 
  */
-export const generatorIds = (clave)=>{ 
+export const generatorIds = (clave)=>{  // revisado
 
     // Agrega un id aleatorio en el array ids
     ids.push( Date.now().toString( 30 ) );

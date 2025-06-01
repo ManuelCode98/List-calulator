@@ -45,7 +45,7 @@ export let arrProductUpdate;
  * Funcion que recibe un array con elementos "undefined" y los filtra y deja solo elementos que no estan "undefined"
  * @param { Array } emptyArr 
  */
-export const emptyArrayProductUndefined = ( emptyArr ) => { 
+export const emptyArrayProductUndefined = ( emptyArr ) => {  //revisdo
 
   arrProductUpdate =  emptyArr.filter( ( data ) => {
 
@@ -61,7 +61,7 @@ export let arrPricesUpdate;
  * Funcion que recibe un array con elementos "undefined" y los filtra y deja solo elementos que no estan "undefined"
  * @param { Array } emptyArr 
  */
-export const emptyArrayPricesUndefined = ( emptyArr ) => { 
+export const emptyArrayPricesUndefined = ( emptyArr ) => { // revisado
 
   arrPricesUpdate = emptyArr.filter( ( data ) => {
 

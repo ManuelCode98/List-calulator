@@ -13,7 +13,7 @@ export const emptyIndexFound = ()=>{
 
 
 // Busca los elementos que estan tachados
-export const searchIndexLineThrough = ()=>{     
+export const searchIndexLineThrough = ()=>{ // revisado
 
     const getIndexTotalPrice = JSON.parse( localStorage.getItem( 4 ) );
 
@@ -38,11 +38,11 @@ export const searchIndexLineThrough = ()=>{
 
     };
 
-    loadClickIndexFound();
+    loadClickIndexFound(); // revisado
 
 };
 
-export const saveClassLineThrough = ()=>{ 
+export const saveClassLineThrough = ()=>{  // revisado
 
     const getIdsLocal = JSON.parse( localStorage.getItem( 2 ) );
 

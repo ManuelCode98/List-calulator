@@ -22,7 +22,7 @@ export const saveProductsLocal = ( clave ) => {
     } else if ( getProductsArray.length && inputsSaves.length <= 1 ){
 
         // Carga todos los productos en la variable virtual
-        loadInputSaves( getProductsArray );
+        loadInputSaves( getProductsArray ); // revisado
 
     } else if( getProductsArray.length && inputsSaves.length >= 2 ){
 

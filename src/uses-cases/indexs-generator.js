@@ -1,6 +1,7 @@
-import { inputsSaves, priceSaves } from "./create-product";
+import { inputsSaves, priceSaves, timeSaves } from "./create-product";
 import { arrIndexsUpdate, emptyArrayIndexsUndefined } from "./empty-array-element-undefined";
 import { generatorIds } from "./generator-ids";
+import { hourSavesLocal } from "./hourSavesLocal";
 import { arrIndexUnderlineNoRepeat } from "./index-underline-no-repeat";
 import { saveProductsLocal } from "./save-products-local";
 import { totalPriceSaveLocal } from "./total-price-save-local";
@@ -64,19 +65,21 @@ export const loadIndexLocal = ()=>{
 
 
 // Genera los indices
-export const indexsGenerator = ()=>{ 
+export const indexsGenerator = ()=>{  // revisado
 
     if ( localStorage.length === 0){
 
-        indexs.push( inputsSaves.length );
+        indexs.push( inputsSaves.length ); // revisado
 
-        saveIndexsLocal( indexs );
+        saveIndexsLocal( indexs ); // revisdo
 
-        generatorIds( 2 );
+        generatorIds( 2 ); // revisado
 
-        saveProductsLocal( 3 );
+        saveProductsLocal( 3 ); //revisado
 
-        totalPriceSaveLocal( 4, priceSaves );
+        hourSavesLocal( 5, timeSaves ); // Revisado
+
+        totalPriceSaveLocal( 4, priceSaves ); // revisado
 
     } else if( localStorage.length >= 1 ) { 
 
@@ -92,14 +95,15 @@ export const indexsGenerator = ()=>{
             // Operador spread para recorrer la nueva instancia del array  
             saveIndexsLocal( [ ...uniqueIndexValue ] );
             
-        };
+            };
 
-        generatorIds( 2 )
+        generatorIds( 2 ) // revisado
 
-        saveProductsLocal( 3 );
+        saveProductsLocal( 3 ); // revisado
 
-        totalPriceSaveLocal( 4, priceSaves );
+        totalPriceSaveLocal( 4, priceSaves ); // revisado
 
+        hourSavesLocal( 5 , timeSaves ); // Revisado
     };
     
 };

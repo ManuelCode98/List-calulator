@@ -9,7 +9,7 @@ import { indexsFound } from "./save-class-line-through";
 export let clickIndexFound = [];
 
 // Carga todos los indices seleccionados en la variable para exportarla
-export const loadClickIndexFound = ()=>{ 
+export const loadClickIndexFound = ()=>{  // revisado
  
     clickIndexFound = indexsFound;
 

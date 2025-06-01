@@ -2,10 +2,10 @@ import { loadTotalPrice, priceSaves } from "./create-product";
 
 
 // Guarda el total de los precios de cada producto
-export const totalPriceSaveLocal = ( clave, totalPriceArr )=>{ 
+export const totalPriceSaveLocal = ( clave, totalPriceArr )=>{  // revisado
 
 
-    const getPriceSaves = JSON.parse( localStorage.getItem( 4 ) );
+    const getPriceSaves = JSON.parse( localStorage.getItem( clave ) );
 
     if ( priceSaves.length <= 1 && getPriceSaves === null || priceSaves.length > 1 && getPriceSaves != null ){
 
@@ -16,7 +16,7 @@ export const totalPriceSaveLocal = ( clave, totalPriceArr )=>{
     }else if( priceSaves.length <= 1 && getPriceSaves.length ){
 
         // Carga los precios en la variable virtual
-        loadTotalPrice( totalPriceArr );
+        loadTotalPrice( clave, totalPriceArr );
 
 
     };
