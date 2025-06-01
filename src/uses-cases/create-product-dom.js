@@ -7,7 +7,6 @@ export const showTotalPrice = () => { // Revisado
     
     const getTotalPrice = JSON.parse(localStorage.getItem( 4 ) );
     const initialValue      = 0;
-    // const showTotalPriceDom = getTotalPrice.reduce( ( acumulador, actualPrice ) => acumulador + actualPrice, initialValue );
     const showTotalPriceDom = getTotalPrice.reduce( ( acumulador, actualPrice ) => ( acumulador + actualPrice ), initialValue )
     infoResultTotal.innerText = showTotalPriceDom.toLocaleString();
 

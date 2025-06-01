@@ -56,7 +56,7 @@ export const eventClick = ( )=>{
 
                 // splice seleccona un elemento por su indice, se seleciona el numero apartir de cuantos se quieren cambiar y se le pasa el valor a cambiar
                 getPriceSavesLocal.splice(indexElementSelect, 1 , inputsSaves[indexElementSelect][1][1] );
-
+           
                 //Cambia el valor del precio guardado en la ejecucion para que no sea tomado en cuenta si un producto esta tachado
                 priceSaves.splice(indexElementSelect, 1 , inputsSaves[indexElementSelect][1][1] );
 
@@ -71,7 +71,7 @@ export const eventClick = ( )=>{
         
                 const saveTotalPrice  = inputsSaves[indexElementSelect][1][0];
                 const saveTotalAmount = inputsSaves[indexElementSelect][2];
-
+                console.log( saveTotalPrice )
                 // Encuentra el indice del elemento que ya no esta tachado
                 const findIndex = clickIndexFound.indexOf(indexElementSelect);
 
@@ -87,7 +87,7 @@ export const eventClick = ( )=>{
                     
 
                 // splice seleccona un elemento por su indice, se seleciona el numero apartir de cuantos se quieren cambiar y se le pasa el valor a cambiar
-                const savePriceChangeLocal = getPriceSavesLocal.splice(indexElementSelect, 1 , parseInt( saveTotalPrice * saveTotalAmount ) );
+                const savePriceChangeLocal = getPriceSavesLocal.splice(indexElementSelect, 1 , parseInt( saveTotalPrice * 1 ) );
 
                 const saveTotalPriceLocal  = localStorage.setItem( 4, JSON.stringify( getPriceSavesLocal ) );
                     
